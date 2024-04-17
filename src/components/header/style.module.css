@@ -1,0 +1,51 @@
+.header{
+    position: fixed;
+    z-index: 1;
+    background-color: #f5f3e221;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    gap: 60px;
+    backdrop-filter: blur(8px);
+}
+
+.a {
+    padding: 16px;
+    height: 100%;
+    transition: font-size ease-out 0.2s, background-color ease-out 0.2s;
+}
+
+.home {
+
+}
+
+.about {
+}
+
+.projects {
+}
+
+.contact {
+}
+
+.home:hover {
+    background-color: #2521a660;
+    font-size: 1.2rem;
+}
+
+.about:hover {
+    background-color: #2521a660;
+    font-size: 1.2rem;
+}
+
+.projects:hover {
+    background-color: #2521a660;
+    font-size: 1.2rem;
+}
+
+.contact:hover {
+    background-color: #2521a660;
+    font-size: 1.2rem;
+}
