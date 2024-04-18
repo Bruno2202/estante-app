@@ -10,7 +10,14 @@
 
 .container {
     width: 100vw;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.home {
+    width: 80%;
+    height: 100%;
+    z-index: 1;
 }
 
 .salutation {
@@ -19,18 +26,14 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 12px;
 }
 
-.salutation_myName {
-    position: relative;
-    width: auto;
-}
-
-.title {
+.title_saluation {
+    z-index: 1;
     transition: text-shadow ease-out 0.2s;
-    animation: fadeIn ease-in-out 1s;
+    animation: fadeIn ease-in 1s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,23 +42,98 @@
     font-size: 3rem;
 }
 
-.title_contrast {
-    color: #2B25D9;
+.title_saluation_contrast {
+    transition: text-shadow ease-out 0.2s;
+    background: linear-gradient(90deg, #8185DB 0%, #2B25D9 78%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'SFPro-bold';
 }
 
-.title_contrast:hover {
-    text-shadow: 0px 0px 20px #093d6b;
+.title_saluation_contrast:hover {
+    text-shadow: 0px 0px 20px #2B25D9;
 }
 
 .title_description {
     font-size: 1.2rem;
-    background: linear-gradient(180deg, #ffffffc7 48%, #FFFFFF00 100%);
+    background: linear-gradient(180deg, #ffffffc7 44%, #FFFFFF00 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.topics {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100% ;
 }
 
 .logo {
     width: 60px;
     height: 60px;
     margin: 0px 12px;
+}
+
+.me {
+    width: 30%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.container_projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.title_topic {
+    font-size: 2rem;
+    margin: 40px 0px;
+    font-family: 'SFPro-bold';
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+}
+
+.letsWork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 52vh;
+}
+
+.letsWork_text {
+    font-family: 'SFPro-thin';
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.letsWork_title {
+    font-family: 'SFPro-bold';
+    font-size: 4rem;
+}
+
+.letsWork_contact {
+    margin: 40px;
+}
+
+.background_image {
+    position: absolute;
+    width: 100vw;
+    height: 200vh;
+    background-image: url('../../assets/img/back.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }

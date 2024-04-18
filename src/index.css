@@ -24,6 +24,7 @@ ul, ol {
 }
 
 body {
+
   font-family: 'SFPro';
   background-color: #040505;
   color: #F5F3E2;
@@ -63,6 +64,34 @@ video {
 @font-face{
   font-family: 'SFPro';
   src: url(./assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro.ttf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'SFPro-bold';
+  src: url(./assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Bold.otf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'SFPro-semibold';
+  src: url(./assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Semibold.otf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'SFPro-medium';
+  src: url(./assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Medium.otf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'SFPro-thin';
+  src: url(./assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Thin.otf) format(truetype);
   font-weight: normal;
   font-style: normal;
 }

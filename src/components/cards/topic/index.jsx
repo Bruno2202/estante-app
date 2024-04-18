@@ -8,11 +8,14 @@ export default function Topic({ title, text, icon, position, children }) {
 			<div
 				className={`${styles.topic} ${position == "left" ? styles.topic_left : position == "right" ? styles.topic_right : position == "center" && styles.topic_center}`}
 			>
-				<p className={styles.title}>{title} {icon && <img className={styles.icon} src={icon}/>} </p>
-				<p className={styles.text}>
-					{text}
-				</p>
-				{children}
+				<div className={styles.content}>
+					<p className={styles.title}>{title} {icon && <img className={styles.icon} src={icon} />} </p>
+					<p className={styles.text}>
+						{text}
+					</p>
+				</div>
+				<div className={styles.chilnder}>
+				</div>
 			</div>
 		</div>
 	)

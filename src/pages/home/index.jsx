@@ -4,45 +4,68 @@ import styles from './style.module.css'
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Topic from '../../components/cards/topic';
+import Projects from '../../components/cards/projects';
+import Button from '../../components/button';
 
 export default function Home() {
 	return (
 		<div className={styles.container}>
 			<Header />
-			<div className={styles.salutation}>
-				<div className={styles.salutation_myName}>
-					<p className={styles.title}>Olá, meu nome é <p className={`${styles.title} ${styles.title_contrast}`}>&nbsp;Bruno</p></p>
+			<div className={styles.home}>
+				<div className={styles.salutation}>
+					<p className={styles.title_saluation}>Olá, meu nome é <p className={`${styles.title} ${styles.title_saluation_contrast}`}>&nbsp;Bruno</p></p>
+					<p className={styles.title_description}>Web developer</p>
 				</div>
-				<p className={styles.title_description}>Web developer</p>
+				<div className={styles.topics}>
+					<Topic
+						title={"Sobre mim"}
+						icon={require('../../assets/img/emoji/thinking.png')}
+						text={`ou desenvolvedor Front-end há mais de um ano. Apaixonado por tecnologia e desenvolvimento, utilizo meus conhecimentos na área para criar aplicações web com diversos propósitos. Tenho experiência trabalhando com HTML, CSS, JavaScript, SQL, React, React Native, Git e Firebase. Estou sempre ansioso para aprender mais sobre como desenvolver projetos incríveis e aprimorar os que já existem.`}
+						position={"center"}
+					>
+					</Topic>
+					<img className={styles.me} src={require('../../assets/img/Bruno.png')} />
+				</div>
+				<div className={styles.container_projects}>
+					<p className={styles.title_topic}>Meus projetos</p>
+					<div className={styles.projects}>
+						<Projects
+							img={require('../../assets/img/projects/Behance.png')}
+							name={"Sandbox"}
+							description={"Minha rede social mobile"}
+							link={"https://github.com/Bruno2202/sandbox"}
+						/>
+						<Projects
+							img={require('../../assets/img/projects/MuchkinId.png')}
+							name={"Muchkin ID"}
+							description={"Auxiliar de jogo do Muchkin"}
+							link={"https://munchkinid.firebaseapp.com/"}
+						/>
+						<Projects
+							img={require('../../assets/img/projects/Portfolio.png')}
+							name={"Portfólio"}
+							description={"Meu portfólio web"}
+						/>
+						<Projects
+							img={require('../../assets/img/projects/Notes.png')}
+							name={"Notes"}
+							description={"Aplicativo de bloco de notas"}
+						/>
+					</div>
+				</div>
+				<div className={styles.letsWork}>
+					<p className={styles.letsWork_text}>Quer criar algo?</p>
+					<p className={styles.letsWork_title}>Vamos desenvolver juntos!</p>
+					<div className={styles.letsWork_contact}>
+						<Button
+							text={"Entrar em contato"}
+						/>
+					</div>
+				</div>
+				<Footer />
 			</div>
-			<Topic
-				title={"Quem sou eu?"}
-				icon={require('../../assets/img/emoji/thinking.png')}
-				text={"Um amanante da tecnologia e do desenvolvimento. Utilizo meus conhecimentos em programação à mais de um ano para elaborar projetos em diferentes áreas."}
-				position={"right"}
-			/>
-				<Topic
-					title={"O que desenvolvo?"}
-					icon={require('../../assets/img/emoji/construction.png')}
-					text={"Atualmente, desenvolvo projetos tanto web quanto mobile, utilizando tecnologias como React e React Native, as quais me possibilitam criar aplicativos multiplataforma e páginas dinâmicas."}
-					position={"left"}
-				/>
-			<Topic
-				title={"Habilidades"}
-				icon={require('../../assets/img/emoji/developer.png')}
-				position={"right"}
-			>
-				<div>
-					<img className={styles.logo} alt='HTML' src={require('../../assets/img/language/html.png')}/>
-					<img className={styles.logo} alt='CSS' src={require('../../assets/img/language/css.png')}/>
-					<img className={styles.logo} alt='JS' src={require('../../assets/img/language/js.png')}/>
-					<img className={styles.logo} alt='React' src={require('../../assets/img/language/react.png')}/>
-					<img className={styles.logo} alt='Mysql' src={require('../../assets/img/language/firebase.png')}/>
-					<img className={styles.logo} alt='Gitbash' src={require('../../assets/img/language/gitBash.png')}/>
-					<img className={styles.logo} alt='Mysql' src={require('../../assets/img/language/mysql.png')}/>
-				</div>
-			</Topic>
-			<Footer />
+			<div className={styles.background_image}>
+			</div>
 		</div>
 	)
 }

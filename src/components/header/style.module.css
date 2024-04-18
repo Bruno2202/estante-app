@@ -1,6 +1,6 @@
 .header{
     position: fixed;
-    z-index: 1;
+    z-index: 99;
     background-color: #f5f3e221;
     display: flex;
     flex-direction: row;
@@ -15,10 +15,10 @@
     padding: 16px;
     height: 100%;
     transition: font-size ease-out 0.2s, background-color ease-out 0.2s;
+    cursor: pointer;
 }
 
 .home {
-
 }
 
 .about {
@@ -32,20 +32,16 @@
 
 .home:hover {
     background-color: #2521a660;
-    font-size: 1.2rem;
 }
 
 .about:hover {
     background-color: #2521a660;
-    font-size: 1.2rem;
 }
 
 .projects:hover {
     background-color: #2521a660;
-    font-size: 1.2rem;
 }
 
 .contact:hover {
     background-color: #2521a660;
-    font-size: 1.2rem;
 }

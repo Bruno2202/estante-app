@@ -1,11 +1,13 @@
 .container {
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     margin-bottom: 60px;
 }
 
 .topic {
+    display: flex;
+    flex-direction: row;
     width: 68%;
     padding: 24px 10%;
     background: rgb(115,120,217);
@@ -42,12 +44,17 @@
     border-radius: 8px;
 }
 
+.topic_center .title {
+    justify-content: center;
+}
+
 .title {
+    font-family: 'SFPro-bold';
     display: flex;
     flex-direction: row;
     align-items: center;
     font-size: 2rem;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     color: #F5F3E2;
 }
 
@@ -59,4 +66,9 @@
 
 .text {
     font-size: 1rem;
+}
+
+.children {
+    width: 100%;
+    height: auto;
 }

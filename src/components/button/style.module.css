@@ -1,0 +1,16 @@
+.button {
+    transition: box-shadow ease-in-out 0.2s, font-size ease-in-out 0.2s,;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    border: none;
+    background: linear-gradient(90deg, #8185DB 0%, #2B25D9 78%);
+    color: #F5F3E2;
+    font-family: 'SFPro-semibold';
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: rgba(96, 82, 226, 0.24) 0px 3px 8px;
+    font-size: 1.1rem;
+}
