@@ -9,8 +9,3 @@
     font-family: 'SFPro-semibold';
     cursor: pointer;
 }
-
-.button:hover {
-    box-shadow: rgba(96, 82, 226, 0.24) 0px 3px 8px;
-    font-size: 1.1rem;
-}

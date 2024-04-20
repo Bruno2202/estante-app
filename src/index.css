@@ -90,6 +90,13 @@ video {
 }
 
 @font-face{
+  font-family: 'SFPro-regular-text';
+  src: url(./assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Regular.otf) format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
   font-family: 'SFPro-thin';
   src: url(./assets/fonts/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Thin.otf) format(truetype);
   font-weight: normal;

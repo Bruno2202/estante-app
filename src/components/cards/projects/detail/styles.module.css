@@ -1,0 +1,48 @@
+.modalOverlay {
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+    width: 60%;
+    border-radius: 8px;
+    padding: 16px;
+    background: #2621A6;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.project_name{
+    font-family: 'SFPro-bold';
+    font-size: 3rem;
+}
+
+.project_description{
+    font-family: 'SFPro-semibold';
+    font-size: 1.2rem;
+}
+
+.project_detailDescription {
+    font-family: 'SFPro-regular-text';
+    display: flex;
+    flex-direction: column;
+    padding: 24px 120px;
+}
