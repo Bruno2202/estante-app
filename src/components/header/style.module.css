@@ -18,18 +18,6 @@
     cursor: pointer;
 }
 
-.home {
-}
-
-.about {
-}
-
-.projects {
-}
-
-.contact {
-}
-
 .home:hover {
     background-color: #2521a660;
 }
@@ -44,4 +32,11 @@
 
 .contact:hover {
     background-color: #2521a660;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        gap: 1px;
+        font-size: 0.8rem;
+    }
 }

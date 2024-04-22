@@ -24,6 +24,7 @@ export default function Header() {
             id="header"
             className={styles.header}
             animate={{ y: 0 }}
+            exit={{ opacity: 0 }}
         >
             <a className={`${styles.a} ${styles.home}`} onClick={() => scrollTo("home")}>HOME</a>
             <a className={`${styles.a} ${styles.about}`} onClick={() => scrollTo("about", -200)}>QUEM SOU</a>

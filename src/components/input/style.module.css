@@ -1,0 +1,13 @@
+.input {
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 4px;
+    padding: 4px;
+    font-family: 'SFPro-regular-text';
+    color: #0F1011;
+}
+
+.input::-webkit-input-placeholder {
+    font-family: 'SFPro-regular-text';
+}
