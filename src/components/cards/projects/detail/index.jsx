@@ -7,16 +7,17 @@ import Button from '../../../button';
 
 export default function Detail({ showDetails, setShowDetails, name, description, detailDescription }) {
     
-    // useEffect(() => {
-    //     animate('#modalOverlay', backgroundStyle);
-    // }, []);
+    useEffect(() => {
+        animate('#modalOverlay', backgroundStyleFadein);
+    }, []);
     
-    const backgroundStyle = isMobile ? {backgroundColor: 'rgb(0,0,0, 0.8)'} : {backdropFilter: 'blur(0px)'} ;
+    const backgroundStyleFadein = isMobile ? {backgroundColor: 'rgb(0,0,0, 0.8)'} : {backdropFilter: 'blur(4px)'};
+    const backgroundStyleFadeOut = isMobile ? {backgroundColor: 'rgb(0,0,0, 0)'} : {backdropFilter: 'blur(0px)'};
 
     function closeModal() {
         document.getElementById('modalOverlay').classList.remove('modalOverlay');
         animate("#detail", { opacity: 0, scale: 0.9 });
-        animate("#modalOverlay", backgroundStyle);
+        // animate("#modalOverlay", backgroundStyleFadeOut);
         animate("#header", { y: 0 }, { ease: 'easeOut', duration: 0.2 });
         document.body.style.overflow = '';
         setTimeout(() => {
@@ -28,7 +29,6 @@ export default function Detail({ showDetails, setShowDetails, name, description,
         <motion.div
             id="modalOverlay"
             className={styles.modalOverlay}
-            initial={{ backdropFilter: 'blur(0px)' }}
         >
             <div className={styles.modalOverlay} onClick={() => closeModal()}>
             </div>

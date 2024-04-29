@@ -20,16 +20,16 @@ export default function Header() {
     }
 
     return (
-        <motion.div
+        <motion.nav
             id="header"
             className={styles.header}
             animate={{ y: 0 }}
             exit={{ opacity: 0 }}
         >
-            <a className={`${styles.a} ${styles.home}`} onClick={() => scrollTo("home")}>HOME</a>
-            <a className={`${styles.a} ${styles.about}`} onClick={() => scrollTo("about", -200)}>QUEM SOU</a>
-            <a className={`${styles.a} ${styles.projects}`} onClick={() => scrollTo("projects", -200)}>PROJETOS</a>
-            <a className={`${styles.a} ${styles.contact}`} onClick={() => scrollTo("contact")}>CONTATO</a>
-        </motion.div>
+            <p className={`${styles.a} ${styles.home}`} onClick={() => scrollTo("home")}>HOME</p>
+            <p className={`${styles.a} ${styles.about}`} onClick={() => scrollTo("about", -200)}>QUEM SOU</p>
+            <p className={`${styles.a} ${styles.projects}`} onClick={() => scrollTo("projects", -200)}>PROJETOS</p>
+            <p className={`${styles.a} ${styles.contact}`} onClick={() => scrollTo("contact")}>CONTATO</p>
+        </motion.nav>
     );
 }

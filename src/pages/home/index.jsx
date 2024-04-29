@@ -31,7 +31,7 @@ export default function Home() {
 								}}
 							>
 								<div className={styles.title_saluation}>
-									<p>Olá, meu nome é </p>
+									<p className={styles.title_saluation_text}>Olá, meu nome é</p>
 									<p className={styles.space}>&nbsp;</p>
 									<p className={styles.title_saluation_contrast}>Bruno</p>
 								</div >
@@ -67,7 +67,7 @@ export default function Home() {
 										title={"Sobre mim"}
 										text={
 											<>
-												Sou Bruno Terribile, tenho 19 anos e sou desenvolver Front-end.
+												Meu nome é Bruno Terribile, tenho 19 anos e sou desenvolver Front-end.
 												<br /><br />Apaixonado por tecnologia e desenvolvimento, utilizo meus conhecimentos na área para criar aplicações web com diversos propósitos.
 												<br /><br />Tenho experiência trabalhando com HTML, CSS, JavaScript, SQL, React, React Native, Git e Firebase.
 												<br /><br />Estou sempre ansioso para aprender mais sobre como desenvolver projetos incríveis e aprimorar os que já existem.
@@ -102,7 +102,7 @@ export default function Home() {
 										name={"Sandbox"}
 										description={"Minha rede social"}
 										detailDescription={{
-											text: "Rede social desenvolvida para dispositivos mobile. Utiliza autenticação OAuth, email e senha. Nela, os usuários conseguem compartilhar textos e imagens",
+											text: "Rede social desenvolvida para dispositivos mobile. Utiliza autenticação OAuth, email e senha. Nela, os usuários conseguem compartilhar textos e imagens.",
 											imgPreview: require('../../assets/img/projects/sandbox/appPreview.png'),
 											viewMore: "https://github.com/Bruno2202/sandbox",
 										}}
@@ -132,7 +132,7 @@ export default function Home() {
 										name={"Notes"}
 										description={"Aplicativo de bloco de notas"}
 										detailDescription={{
-											text: "App mobile o qual permite que o usuário possa salvar suas notações. Desenvolvido para estudos do React Native",
+											text: "App mobile o qual permite que o usuário possa salvar suas notações. Desenvolvido para estudos do React Native.",
 											imgPreview: require('../../assets/img/projects/Notes.png'),
 											viewMore: "https://github.com/Bruno2202",
 										}}
