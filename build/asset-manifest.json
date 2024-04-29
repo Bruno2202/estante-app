@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.51fd570b.css",
+    "main.js": "/static/js/main.d520225b.js",
+    "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
+    "static/media/SF-Pro.ttf": "/static/media/SF-Pro.2f9118d7e608bf94730c.ttf",
+    "static/media/SF-Pro-Display-Semibold.otf": "/static/media/SF-Pro-Display-Semibold.f50e0151c241f0e9d573.otf",
+    "static/media/SF-Pro-Display-Medium.otf": "/static/media/SF-Pro-Display-Medium.e1d844da0ee028d4e288.otf",
+    "static/media/SF-Pro-Display-Bold.otf": "/static/media/SF-Pro-Display-Bold.170e68ac3f4c79ef407d.otf",
+    "static/media/SF-Pro-Display-Thin.otf": "/static/media/SF-Pro-Display-Thin.c656fd92a4e16cd8b12c.otf",
+    "static/media/SF-Pro-Text-Regular.otf": "/static/media/SF-Pro-Text-Regular.ba21d41dbb34b2e04643.otf",
+    "static/media/appPreview.png": "/static/media/appPreview.430b608f6aa7b0d7946f.png",
+    "static/media/Behance.png": "/static/media/Behance.3b7a4e91be75dc09f8fc.png",
+    "static/media/back.png": "/static/media/back.92fe32a418b270f4c32a.png",
+    "static/media/Bruno.png": "/static/media/Bruno.ce5afb8c26558c8633ea.png",
+    "static/media/MuchkinId.png": "/static/media/MuchkinId.ce7680e359d5acd962b4.png",
+    "static/media/Notes.png": "/static/media/Notes.e7e21c9450995d978d25.png",
+    "static/media/Portfolio.png": "/static/media/Portfolio.404566bd314826fee1d4.png",
+    "index.html": "/index.html",
+    "main.51fd570b.css.map": "/static/css/main.51fd570b.css.map",
+    "main.d520225b.js.map": "/static/js/main.d520225b.js.map",
+    "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51fd570b.css",
+    "static/js/main.d520225b.js"
+  ]
+}

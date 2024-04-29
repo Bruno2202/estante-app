@@ -21,11 +21,11 @@
     width: 60%;
     border-radius: 8px;
     padding: 16px;
-    background: rgb(115,120,217);
-    background: -moz-linear-gradient(25deg, rgba(115,120,217,1) 0%, rgba(38,33,166,1) 100%);
-    background: -webkit-linear-gradient(25deg, rgba(115,120,217,1) 0%, rgba(38,33,166,1) 100%);
-    background: linear-gradient(25deg, rgba(115,120,217,1) 0%, rgba(38,33,166,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7378d9",endColorstr="#2621a6",GradientType=1);
+    background: rgb(115, 120, 217);
+    background: -moz-linear-gradient(25deg, rgba(115, 120, 217, 1) 0%, rgba(38, 33, 166, 1) 100%);
+    background: -webkit-linear-gradient(25deg, rgba(115, 120, 217, 1) 0%, rgba(38, 33, 166, 1) 100%);
+    background: linear-gradient(25deg, rgba(115, 120, 217, 1) 0%, rgba(38, 33, 166, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7378d9", endColorstr="#2621a6", GradientType=1);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
@@ -44,23 +44,35 @@
     margin-bottom: 20px;
 }
 
-.project_name{
+.project_name {
     font-family: 'SFPro-bold';
     font-size: 3rem;
 }
 
-.project_description{
+.project_description {
     font-family: 'SFPro-semibold';
     font-size: 1.2rem;
 }
 
-.project_detailDescription {
-    font-family: 'SFPro-regular-text';
+.project_detail {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 24px 120px;
+    width: 100%;
+    padding: 24px 24px;
+    gap: 12px;
+    font-family: 'SFPro-regular-text';
+}
+
+.project_detailDescription {
+    width: 50%;
+}
+
+.project_preview {
+    display: flex;
+    width: 50%;
+    border-radius: 8px;
 }
 
 .viewMore {
@@ -69,4 +81,33 @@
     align-items: center;
     justify-content: center;
     width: 50%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .detail {
+        width: 92%;
+    }
+
+    .project_detail {
+        flex-direction: column;
+    }
+
+    .project_name {
+        font-size: 2rem;
+    }
+
+    .project_description {
+        font-size: 1.1rem;
+    }
+
+    .project_detailDescription {
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project_preview {
+        width: 100%;
+    }
 }
