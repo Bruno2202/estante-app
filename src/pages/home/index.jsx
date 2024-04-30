@@ -67,10 +67,10 @@ export default function Home() {
 										title={"Sobre mim"}
 										text={
 											<>
-												Meu nome é Bruno Terribile, tenho 19 anos e sou desenvolver Front-end.
+												Meu nome é Bruno Terribile, tenho 19 anos e sou desenvolvedor Front-end.
 												<br /><br />Apaixonado por tecnologia e desenvolvimento, utilizo meus conhecimentos na área para criar aplicações web com diversos propósitos.
 												<br /><br />Tenho experiência trabalhando com HTML, CSS, JavaScript, SQL, React, React Native, Git e Firebase.
-												<br /><br />Estou sempre ansioso para aprender mais sobre como desenvolver projetos incríveis e aprimorar os que já existem.
+												<br /><br />Estou sempre ansioso em aprender mais como desenvolver projetos incríveis e aprimorar meus conhecimentos na área.
 											</>
 										}
 
