@@ -1,7 +1,7 @@
 .button {
     transition: box-shadow ease-in-out 0.2s, font-size ease-in-out 0.2s,;
     padding: 12px 20px;
-    border-radius: 50px;
+    border-radius: 8px;
     font-size: 1rem;
     border: none;
     background: linear-gradient(90deg, #8185DB 0%, #2B25D9 78%);

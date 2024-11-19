@@ -4,7 +4,7 @@ import Header from '../../components/header';
 import { useContext } from 'react';
 import { BookContext } from '../../contexts/bookContext';
 
-export default function Home() {
+export default function User() {
 	const { books, setBooks } = useContext(BookContext);
 
 	return (
