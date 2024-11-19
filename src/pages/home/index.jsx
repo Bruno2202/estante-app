@@ -8,8 +8,19 @@ export default function Home() {
 	const { books, setBooks } = useContext(BookContext);
 
 	return (
-		<div id="container" className={styles.container}>
+		<>
 			<Header />
-		</div >
+			<div id="container" className={styles.container}>
+				{books.length > 0 ? (
+					<div>
+
+					</div>
+				) : (
+					<div className={styles.noContent}>
+						<h3>Nenhum usuário postou um livro ainda 😔</h3>
+					</div>
+				)}
+			</div >
+		</>
 	)
 }

@@ -34,6 +34,12 @@
     background-color: #2521a660;
 }
 
+.logout {
+    position: absolute;
+    right: 0;
+    margin: 40px;
+}
+
 @media only screen and (max-width: 600px) {
     .header {
         gap: 1px;

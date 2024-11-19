@@ -1,5 +1,16 @@
 .container {
     width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+}
+
+.userContainer {
+    margin: 8%;
+}
+
+.booksContainer {
+    display: flex;
+    flex-direction: column;
 }

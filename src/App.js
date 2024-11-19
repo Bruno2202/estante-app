@@ -5,20 +5,24 @@ import Home from './pages/home';
 import Register from './pages/register';
 import BookProvider from "./contexts/bookContext";
 import User from "./pages/user";
+import UserProvider from "./contexts/userContext";
+import Ranking from "./pages/ranking";
 
 export default function App() {
 	return (
 		<BookProvider>
-			<Router>
-				<Routes>
-					<Route path='/' element={<Login />} />
-					<Route path='/auth/register' element={<Register />} />
-					<Route path='/home' element={<Home />} />
-					<Route path='/user' element={<User />} />
-				</Routes>
-			</Router>
-			<Toaster />
+			<UserProvider>
+				<Router>
+					<Routes>
+						<Route path='/' element={<Login />} />
+						<Route path='/auth/register' element={<Register />} />
+						<Route path='/home' element={<Home />} />
+						<Route path='/user' element={<User />} />
+						<Route path='/ranking' element={<Ranking />} />
+					</Routes>
+				</Router>
+				<Toaster />
+			</UserProvider>
 		</BookProvider>
-
 	);
 }
