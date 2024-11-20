@@ -1,0 +1,38 @@
+.container {
+    background-color: #101131;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
+.nameContainer {
+    background-color: #424391;
+    padding: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.dataContainer {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.itemContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-family: 'SFPro-thin';
+}
+
+.itemData {
+    margin-left: 4px;
+}

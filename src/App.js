@@ -7,11 +7,12 @@ import BookProvider from "./contexts/bookContext";
 import User from "./pages/user";
 import UserProvider from "./contexts/userContext";
 import Ranking from "./pages/ranking";
+import Book from "./pages/book";
 
 export default function App() {
 	return (
-		<BookProvider>
-			<UserProvider>
+		<UserProvider>
+			<BookProvider>
 				<Router>
 					<Routes>
 						<Route path='/' element={<Login />} />
@@ -19,10 +20,11 @@ export default function App() {
 						<Route path='/home' element={<Home />} />
 						<Route path='/user' element={<User />} />
 						<Route path='/ranking' element={<Ranking />} />
+						<Route path='/book' element={<Book />} />
 					</Routes>
 				</Router>
 				<Toaster />
-			</UserProvider>
-		</BookProvider>
+			</BookProvider>
+		</UserProvider>
 	);
 }

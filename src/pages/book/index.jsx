@@ -5,8 +5,7 @@ import { useEffect } from 'react';
 import { Auth } from '../../core/api/auth';
 import { useNavigate } from 'react-router-dom';
 
-export default function Ranking() {
-	
+export default function Book() {
 	useEffect(() => {
 		if (!Auth.validateRoute()) {
 			navigate('/');
@@ -16,8 +15,10 @@ export default function Ranking() {
 	const navigate = useNavigate();
 
 	return (
-		<div id="container" className={styles.container}>
+		<>
 			<Header />
-		</div >
+			<div id="container" className={styles.container}>
+			</div>
+		</>
 	)
 }
