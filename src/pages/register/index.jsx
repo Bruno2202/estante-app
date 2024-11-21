@@ -13,10 +13,10 @@ export default function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { setEditBook } = useContext(BookContext) 
+    const { setEditBook } = useContext(BookContext)
 
     useEffect(() => {
-			setEditBook(null);
+        setEditBook(null);
     }, []);
 
     const navigate = useNavigate();
@@ -36,13 +36,13 @@ export default function Register() {
         <div className={styles.container}>
             <div className={styles.formContainer}>
                 <h1>Cadastro</h1>
-                <Input placeholder="Nome" onChange={(e) => setName(e.target.value)}/>
+                <Input placeholder="Nome" onChange={(e) => setName(e.target.value)} maxLength={20} />
                 <Input placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                 <Input placeholder="Senha" onChange={(e) => setPassword(e.target.value)} type={"password"} />
                 <div className={styles.linkContainer}>
                     <Link to={'/'}>Entrar</Link>
                 </div>
-                <Button onClick={() => handlRegister()} text={"Entrar"} />
+                <Button onClick={() => handlRegister()} text={"Cadastrar"} />
             </div>
         </div>
     )

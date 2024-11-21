@@ -16,12 +16,15 @@ export default function Home() {
 
 	const navigate = useNavigate();
 
+	// Autenticação/validação de páginas
 	useEffect(() => {
 		if (!Auth.validateRoute()) {
 			navigate('/');
 		};
 	}, [navigate]);
 
+
+	
 	useEffect(() => {
 		if (searchTerm === "") {
 			setFilteredBooks(books);
@@ -68,6 +71,7 @@ export default function Home() {
 								numPg={book.num_pag}
 								readed={book.lido}
 								favorite={book.favorito}
+								read={book.queroLer}
 							/>
 						)}
 					</div>

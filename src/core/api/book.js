@@ -35,6 +35,18 @@ export class Books {
         }
     }
 
+    static async getReadBooks(idUsuario) {
+        try {
+            const response = await fetch(`http://localhost:3333/livros/${idUsuario}/ler`, {
+                method: 'GET'
+            });
+
+            return await response.json();
+        } catch (error) {
+            return { error: error.message };
+        }
+    }
+
     static async create(idUsuario, idGenero, nome, numPag, autor, dtPubli, lido) {
         try {
             const response = await fetch(`http://localhost:3333/livros`, {
@@ -77,6 +89,42 @@ export class Books {
         try {
             const response = await fetch(`http://localhost:3333/livro/favoritar/${id}/${idUsuario}`, {
                 method: 'POST',
+            });
+
+            return await response.json();
+        } catch (error) {
+            return { error: error.message };
+        }
+    }
+    
+    static async unFavoriteBook(id, idUsuario) {
+        try {
+            const response = await fetch(`http://localhost:3333/livro/favoritar/${id}/${idUsuario}`, {
+                method: 'DELETE',
+            });
+
+            return await response.json();
+        } catch (error) {
+            return { error: error.message };
+        }
+    }
+
+    static async readBook(id, idUsuario) {
+        try {
+            const response = await fetch(`http://localhost:3333/livro/ler/${id}/${idUsuario}`, {
+                method: 'POST',
+            });
+
+            return await response.json();
+        } catch (error) {
+            return { error: error.message };
+        }
+    }
+    
+    static async unreadBook(id, idUsuario) {
+        try {
+            const response = await fetch(`http://localhost:3333/livro/ler/${id}/${idUsuario}`, {
+                method: 'DELETE',
             });
 
             return await response.json();

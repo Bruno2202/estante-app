@@ -67,6 +67,8 @@ export default function Favorites() {
 								name={book.nome}
 								numPg={book.num_pag}
 								readed={book.lido}
+								favorite={book.favorito}
+								read={book.queroLer}
 							/>
 						)}
 					</div>

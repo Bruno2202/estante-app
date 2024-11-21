@@ -11,13 +11,17 @@ export default function Book({ id, name, numPg, autor, dtPubli, readed, gen, use
     const data = new Date(dtPubli);
     const dataFormatada = data.toLocaleDateString("pt-BR");
 
-    const { setMyBooks, setEditBook, setBooks } = useContext(BookContext)
+    const { setMyBooks, setEditBook, setBooks, setFavoriteBooks, setReadBooks } = useContext(BookContext)
 
     const navigate = useNavigate();
 
     async function handleDeleteBook(id) {
         await Books.delete(id);
+        
+        handleGetBooks();
         handleGetMyBooks();
+        handleGetReadBooks();
+        handleGetFavoriteBooks();
     }
 
     const formatDate = (date) => {
@@ -46,15 +50,47 @@ export default function Book({ id, name, numPg, autor, dtPubli, readed, gen, use
 
         handleGetBooks();
         handleGetMyBooks();
+        handleGetReadBooks();
+        handleGetFavoriteBooks();
+    }
+    async function handleUnFavoriteBook(id) {
+        await Books.unFavoriteBook(id, localStorage.getItem("userId"));
+
+        handleGetBooks();
+        handleGetMyBooks();
+        handleGetReadBooks();
+        handleGetFavoriteBooks();
+    }
+
+    async function handleReadBook(id) {
+        await Books.readBook(id, localStorage.getItem("userId"));
+
+        handleGetBooks();
+        handleGetMyBooks();
+        handleGetReadBooks();
+        handleGetFavoriteBooks();
+    }
+    async function handleUnreadBook(id) {
+        await Books.unreadBook(id, localStorage.getItem("userId"));
+
+        handleGetBooks();
+        handleGetMyBooks();
+        handleGetReadBooks();
+        handleGetFavoriteBooks();
     }
 
     async function handleGetMyBooks() {
         setMyBooks(await Books.getMyBooks(userId));
     }
-
     async function handleGetBooks() {
         setBooks(await Books.getAllBooks(localStorage.getItem("userId")));
     }
+	async function handleGetReadBooks() {
+		setReadBooks(await Books.getReadBooks(localStorage.getItem("userId")));
+	}
+    async function handleGetFavoriteBooks() {
+		setFavoriteBooks(await Books.getFavoriteBooks(localStorage.getItem("userId")));
+	}
 
     return (
         <div id={id} className={styles.container}>
@@ -71,10 +107,10 @@ export default function Book({ id, name, numPg, autor, dtPubli, readed, gen, use
                     )}
                     {userId !== localStorage.getItem("userId") && (
                         <>
-                            <FaReadme size={24} color={theme.colorRed} onClick={() => handleFavoriteBook(id)} />
+                            <FaReadme size={24} color={read ? theme.colorRed : theme.colorGrey} onClick={() => read ? handleUnreadBook(id) : handleReadBook(id)} />
                         </>
                     )}
-                    <MdFavorite size={24} color={favorite ? theme.colorRed : theme.colorGrey} onClick={() => handleFavoriteBook(id)} />
+                    <MdFavorite size={24} color={favorite ? theme.colorRed : theme.colorGrey} onClick={() => favorite ? handleUnFavoriteBook(id) : handleFavoriteBook(id)} />
                 </div>
             </div>
             <div className={styles.dataContainer}>

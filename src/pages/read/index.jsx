@@ -10,9 +10,9 @@ import Input from '../../components/input';
 import { Books } from '../../core/api/book';
 
 export default function Read() {
-	const { books, setBooks, setEditBook } = useContext(BookContext);
+	const { setEditBook, readBooks, setReadBooks } = useContext(BookContext);
 	const [searchTerm, setSearchTerm] = useState("");
-	const [filteredBooks, setFilteredBooks] = useState(books);
+	const [filteredBooks, setFilteredBooks] = useState(readBooks);
 
 	const navigate = useNavigate();
 
@@ -24,24 +24,24 @@ export default function Read() {
 
 	useEffect(() => {
 		if (searchTerm === "") {
-			setFilteredBooks(books);
+			setFilteredBooks(readBooks);
 		} else {
 			setFilteredBooks(
-				books.filter(book =>
+				readBooks.filter(book =>
 					book.nome.toLowerCase().includes(searchTerm.toLowerCase())
 				)
 			);
 		}
-	}, [searchTerm, books]);
+	}, [searchTerm, readBooks]);
 
 	useEffect(() => {
-		async function handleGetMyBooks() {
-			setBooks(await Books.getAllBooks(localStorage.getItem("userId")));
-		}
-
-		handleGetMyBooks();
+		handleGetReadBooks();
 		setEditBook(null)
 	}, []);
+
+	async function handleGetReadBooks() {
+		setReadBooks(await Books.getReadBooks(localStorage.getItem("userId")));
+	}
 
 	return (
 		<>
@@ -67,6 +67,8 @@ export default function Read() {
 								name={book.nome}
 								numPg={book.num_pag}
 								readed={book.lido}
+								favorite={book.favorito}
+								read={book.queroLer}
 							/>
 						)}
 					</div>

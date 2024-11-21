@@ -15,10 +15,10 @@ export default function Login() {
 
     const { setUserId } = useContext(UserContext);
 
-    const { setEditBook } = useContext(BookContext) 
+    const { setEditBook } = useContext(BookContext)
 
     useEffect(() => {
-			setEditBook(null);
+        setEditBook(null);
     }, []);
 
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ export default function Login() {
             localStorage.setItem("userId", res.user.id);
 
             setUserId(localStorage.getItem("userId"));
-            
+
             navigate("/home");
         } else {
             toast.error("Não foi possível realizar login");
