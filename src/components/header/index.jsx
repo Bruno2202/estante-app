@@ -18,7 +18,9 @@ export default function Header() {
             <p className={`${styles.a} ${styles.home}`} onClick={() => navigate('/home')}>HOME 🏠</p>
             <p className={`${styles.a} ${styles.home}`} onClick={() => navigate('/ranking')}>RANKING 🎖️</p>
             <p className={`${styles.a} ${styles.about}`} onClick={() => navigate('/user')}>PERFIL 🙋</p>
-            <p className={`${styles.a} ${styles.about}`} onClick={() => navigate('/book')}>CADASTRAR LIVRO 📔</p>
+            <p className={`${styles.a} ${styles.about}`} onClick={() => navigate('/book')}>CADASTRAR LIVRO ➕</p>
+            <p className={`${styles.a} ${styles.about}`} onClick={() => navigate('/read')}>QUERO LER 📚</p>
+            <p className={`${styles.a} ${styles.about}`} onClick={() => navigate('/favorites')}>FAVORITOS ❤️</p>
             <div className={styles.logout}>
                 <Link onClick={() => Auth.logout()} to={'/'}>
                     <MdOutlineExitToApp size={24} color={theme.colorRed} />

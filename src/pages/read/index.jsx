@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../../components/input';
 import { Books } from '../../core/api/book';
 
-export default function Home() {
+export default function Read() {
 	const { books, setBooks, setEditBook } = useContext(BookContext);
 	const [searchTerm, setSearchTerm] = useState("");
 	const [filteredBooks, setFilteredBooks] = useState(books);
@@ -35,11 +35,11 @@ export default function Home() {
 	}, [searchTerm, books]);
 
 	useEffect(() => {
-		async function handleGetBooks() {
+		async function handleGetMyBooks() {
 			setBooks(await Books.getAllBooks(localStorage.getItem("userId")));
 		}
 
-		handleGetBooks();
+		handleGetMyBooks();
 		setEditBook(null)
 	}, []);
 
@@ -67,7 +67,6 @@ export default function Home() {
 								name={book.nome}
 								numPg={book.num_pag}
 								readed={book.lido}
-								favorite={book.favorito}
 							/>
 						)}
 					</div>

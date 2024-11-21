@@ -43,6 +43,7 @@ export class Auth {
 
     static async logout() {
         localStorage.removeItem("token");
+        localStorage.removeItem("userId");
         
         window.location.href = "/";
     }

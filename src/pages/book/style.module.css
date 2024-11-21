@@ -1,9 +1,20 @@
 .container {
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.inputsContainer {
+    display: flex;
+    gap: 20px;
+    width: 80%;
+}
+
+.selectContainer {
+    margin-top: 40px;
 }
 
 .userContainer {
@@ -17,4 +28,8 @@
 .booksContainer {
     display: flex;
     flex-direction: column;
+}
+
+.buttonContainer {
+    margin-top: 40px;
 }

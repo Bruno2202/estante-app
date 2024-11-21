@@ -10,6 +10,16 @@
     padding: 8px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options {
+    display: flex;
+    margin: 4px;
+    align-items: center;
+    justify-content: flex-end;    
 }
 
 .dataContainer {
@@ -35,4 +45,9 @@
 
 .itemData {
     margin-left: 4px;
+}
+
+.iconsContainer {
+    display: flex;
+    gap: 20px;
 }

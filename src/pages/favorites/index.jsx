@@ -9,10 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../../components/input';
 import { Books } from '../../core/api/book';
 
-export default function Home() {
-	const { books, setBooks, setEditBook } = useContext(BookContext);
+export default function Favorites() {
+	const { setEditBook, favoriteBooks, setFavoriteBooks } = useContext(BookContext);
 	const [searchTerm, setSearchTerm] = useState("");
-	const [filteredBooks, setFilteredBooks] = useState(books);
+	const [filteredBooks, setFilteredBooks] = useState(favoriteBooks);
 
 	const navigate = useNavigate();
 
@@ -24,24 +24,24 @@ export default function Home() {
 
 	useEffect(() => {
 		if (searchTerm === "") {
-			setFilteredBooks(books);
+			setFilteredBooks(favoriteBooks);
 		} else {
 			setFilteredBooks(
-				books.filter(book =>
+				favoriteBooks.filter(book =>
 					book.nome.toLowerCase().includes(searchTerm.toLowerCase())
 				)
 			);
 		}
-	}, [searchTerm, books]);
+	}, [searchTerm, favoriteBooks]);
 
 	useEffect(() => {
-		async function handleGetBooks() {
-			setBooks(await Books.getAllBooks(localStorage.getItem("userId")));
-		}
-
-		handleGetBooks();
+		handleGetFavoriteBooks();
 		setEditBook(null)
 	}, []);
+
+	async function handleGetFavoriteBooks() {
+		setFavoriteBooks(await Books.getFavoriteBooks(localStorage.getItem("userId")));
+	}
 
 	return (
 		<>
@@ -67,13 +67,12 @@ export default function Home() {
 								name={book.nome}
 								numPg={book.num_pag}
 								readed={book.lido}
-								favorite={book.favorito}
 							/>
 						)}
 					</div>
 				) : (
 					<div className={styles.noContent}>
-						<h3>Nenhum livro encontrado 😔</h3>
+						<h3>Você não possui livros favoritados 😔</h3>
 					</div>
 				)}
 			</div>

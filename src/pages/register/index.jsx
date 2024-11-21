@@ -4,13 +4,20 @@ import Input from "../../components/input";
 
 import styles from "./style.module.css"
 import { Auth } from "../../core/api/auth";
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { BookContext } from "../../contexts/bookContext";
 
 export default function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const { setEditBook } = useContext(BookContext) 
+
+    useEffect(() => {
+			setEditBook(null);
+    }, []);
 
     const navigate = useNavigate();
 

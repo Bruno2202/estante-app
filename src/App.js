@@ -8,6 +8,8 @@ import User from "./pages/user";
 import UserProvider from "./contexts/userContext";
 import Ranking from "./pages/ranking";
 import Book from "./pages/book";
+import Read from "./pages/read";
+import Favorites from "./pages/favorites";
 
 export default function App() {
 	return (
@@ -21,6 +23,8 @@ export default function App() {
 						<Route path='/user' element={<User />} />
 						<Route path='/ranking' element={<Ranking />} />
 						<Route path='/book' element={<Book />} />
+						<Route path='/read' element={<Read />} />
+						<Route path='/favorites' element={<Favorites />} />
 					</Routes>
 				</Router>
 				<Toaster />

@@ -7,10 +7,11 @@ import { UserContext } from '../../contexts/userContext';
 import { Auth } from '../../core/api/auth';
 import { useNavigate } from 'react-router-dom';
 import Book from '../../components/book';
+import { Books } from '../../core/api/book';
 
 export default function User() {
-	const { myBooks } = useContext(BookContext);
-	const { user } = useContext(UserContext);
+	const { myBooks, setMyBooks, setEditBook } = useContext(BookContext);
+	const { user, userId } = useContext(UserContext);
 
 	useEffect(() => {
 		if (!Auth.validateRoute()) {
@@ -19,6 +20,17 @@ export default function User() {
 	});
 
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		if (userId) {
+			async function handleGetMyBooks() {
+				setMyBooks(await Books.getMyBooks(userId));
+			}
+
+			handleGetMyBooks();
+			setEditBook(null);
+		}
+	}, []);
 
 	return (
 		<>
@@ -31,28 +43,27 @@ export default function User() {
 					/>
 					<h2>{user?.nome ? user.nome : "Nome do usuário"}</h2>
 				</div>
-				<div className={styles.booksContainer}>
-					{myBooks.length > 0 ? (
-						<div className={styles.booksContainer}>
-							<h2>Seus livros:</h2>
-							{myBooks.map((book) =>
-								<Book
-									id={book.id}
-									autor={book.autor}
-									dtPubli={book.dt_publi}
-									gen={book.id_genero}
-									name={book.nome}
-									numPg={book.num_pag}
-									readed={book.lido}
-								/>
-							)}
-						</div>
-					) : (
-						<div>
-							<h3>Você não possui livros 📔</h3>
-						</div>
-					)}
-				</div>
+				{myBooks.length > 0 ? (
+					<div className={styles.booksContainer}>
+						{myBooks.map((book) =>
+							<Book
+								key={book.id}
+								id={book.id}
+								userId={book.id_usuario}
+								autor={book.autor}
+								dtPubli={book.dt_publi}
+								gen={book.id_genero}
+								name={book.nome}
+								numPg={book.num_pag}
+								readed={book.lido}
+							/>
+						)}
+					</div>
+				) : (
+					<div>
+						<h3>Você não possui livros 📔</h3>
+					</div>
+				)}
 			</div>
 		</>
 	)

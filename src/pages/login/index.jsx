@@ -7,12 +7,19 @@ import { Auth } from "../../core/api/auth";
 import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { UserContext } from "../../contexts/userContext";
+import { BookContext } from "../../contexts/bookContext";
 
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const { setUser } = useContext(UserContext);
+    const { setUserId } = useContext(UserContext);
+
+    const { setEditBook } = useContext(BookContext) 
+
+    useEffect(() => {
+			setEditBook(null);
+    }, []);
 
     const navigate = useNavigate();
 
@@ -21,7 +28,10 @@ export default function Login() {
 
         if (res.token) {
             localStorage.setItem("token", res.token);
-            setUser(res.user)
+            localStorage.setItem("userId", res.user.id);
+
+            setUserId(localStorage.getItem("userId"));
+            
             navigate("/home");
         } else {
             toast.error("Não foi possível realizar login");

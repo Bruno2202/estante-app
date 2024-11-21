@@ -7,6 +7,9 @@ export const BookContext = createContext(null);
 export default function BookProvider({ children }) {
     const [books, setBooks] = useState([]);
     const [myBooks, setMyBooks] = useState([]);
+    const [editBook, setEditBook] = useState(null);
+    const [favoriteBooks, setFavoriteBooks] = useState([]);
+    const [readBooks, setReadBooks] = useState([]);
 
     const { user } = useContext(UserContext);
 
@@ -17,7 +20,7 @@ export default function BookProvider({ children }) {
             }
 
             async function handleGetAllBooks() {
-                setBooks(await Books.getAllBooks());
+                setBooks(await Books.getAllBooks(localStorage.getItem("userId")));
             }
 
             handleGetMyBooks();
@@ -31,7 +34,13 @@ export default function BookProvider({ children }) {
                 books,
                 setBooks,
                 myBooks,
-                setMyBooks
+                setMyBooks,
+                editBook,
+                setEditBook,
+                favoriteBooks, 
+                setFavoriteBooks,
+                readBooks, 
+                setReadBooks
             }}
         >
             {children}
